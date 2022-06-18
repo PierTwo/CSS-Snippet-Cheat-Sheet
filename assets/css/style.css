@@ -21,29 +21,64 @@ body {
 }
 
 header {
-    margin-bottom: 0;
+    margin-bottom: auto;
 }
 
 .flex-row {
     display: flex;
     flex-flow: row wrap;
-    margin: auto;
 }
 
 .flex-column {
     display: flex;
+    flex: 1 0 100%;
     justify-content: center;
-    flex: 0 0 100%;
-    max-width: 100%;
+}
+
+.code-card h4 {
+    position: relative;
+    bottom: 45px;
+    align-self: center;
+    background-color: hsl(332, 100%, 25%);
+    border: 2.5px solid hsl(205, 100%, 25%);
+    padding: 5px;
+}
+
+.code-card pre {
+    position: relative;
+    bottom: 20px;
+    padding: 10px;
+    background-color: hsl(332, 100%, 25%);
+    border: hsl(205, 100%, 25%) solid 3px;
 }
 
 .code-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-grow: 1;
+    outline: hsl(332, 100%, 25%) dashed 3px;
+    outline-offset: 1px;
+    margin: 5rem;
+    padding: 1.5rem;
+    color: white;
+}
+
+.code-card:hover {
+    background-color: initial;
+}
+
+.code-card pre:hover {
+    border: hsl(205, 100%, 25%) solid 3px;
+    box-shadow: inset 0px 0px 5px hsl(205, 100%, 25%), 0px 0px 20px hsl(205, 100%, 25%);
     background-color: hsl(332, 100%, 25%);
-    margin: 35px;
-    padding: 5px;
+}
+
+.code-card pre:active {
+    user-select: all;
+}
+
+footer a {
+    color: darkcyan;
 }
 
 footer {
@@ -53,9 +88,7 @@ footer {
 @media screen and (min-width: 992px) {
     .flex-column {
         flex: 0 0 33.333%;
+        max-width: 33.333%;
     }
 
-    .code-card {
-        min-width: 33.333%;
-    }
 }
